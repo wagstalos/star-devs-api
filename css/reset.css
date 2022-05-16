@@ -1,0 +1,25 @@
+:root{
+    --yellow: #DCA500;
+    --yellow-light: #FFBF00;
+    --grey: #333;
+    --white: #FAFAFA;
+    --black: #1a1a1a;
+    --transition: .3s ease-in-out;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: var(--black) ;
+    padding: 2%;
+}
+
+h1,h2, h3, span, p{
+    font-family: 'Nunito', sans-serif;
+    color: var(--white);
+}
