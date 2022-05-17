@@ -2,8 +2,8 @@ const personsCard = document.getElementById("people");
 const starshipCard = document.getElementById("starships");
 const planetsCard = document.getElementById("planets");
 
-const btnPhases = document.getElementById("btn-phrases");
-const phase = document.getElementById("phrase");
+const btnPhrases = document.getElementById("btn-phrases");
+const phrase = document.getElementById("phrase");
 
 function fillCounters() {
   Promise.all([getData("people"), getData("starships"), getData("planets")])
@@ -19,4 +19,14 @@ fillCounters();
 
 function getData(param) {
   return fetch(`https://swapi.dev/api/${param}`).then((res) => res.json());
+}
+
+function loadPhase() {
+  fetch("https://api.chucknorris.io/jokes/random")
+    .then((res) => res.json())
+    .then((data) => {
+      phrase.innerHTML = `${data.value}`;
+      btnPhrases.innerHTML = "Ver mais uma frase";
+    })
+    .catch((err) => console.log("ERROR: ", err));
 }
